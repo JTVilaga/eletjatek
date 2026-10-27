@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Élet</title>
+  <meta name="description" content="John Horton Conway életjátéka">
+  <meta name="theme-color" content="#1f6f5c">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="ikon/ikon-192.png">
+  <link rel="apple-touch-icon" href="ikon/ikon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="fejlec">
+    <h1>Életjáték</h1>
+    <p class="leiras">John Horton Conway életjátéka elmélete</p>
+  </header>
+
+  <main>
+    <canvas id="vaszon" aria-label="Életjáték rács"></canvas>
+
+    <div class="adatok">
+      <span>Generáció: <b id="generacio">0</b></span>
+      <span>Élő cellák: <b id="elok">0</b></span>
+    </div>
+
+    <div class="gombok">
+      <button id="btnIndit" class="gomb gomb-fo">Indítás</button>
+      <button id="btnLepes" class="gomb">Lépés</button>
+      <button id="btnVeletlen" class="gomb">Véletlen</button>
+      <button id="btnTorol" class="gomb">Törlés</button>
+    </div>
+
+    <label class="sebesseg">
+      Sebesség
+      <input id="sebesseg" type="range" min="1" max="10" value="5">
+    </label>
+
+    <p class="sugo">Koppints a cellákra, és élővé vagy halottá teszed őket.</p>
+  </main>
+
+  <p class="verzio">v<span id="verzio"></span></p>
+
+  <script src="js/app.js"></script>
+  <script src="js/telepites.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Élet – stíluslap. Világos és sötét téma a rendszer beállítása szerint. */
+
+:root {
+  --hatter: #f6f7f5;
+  --felulet: #ffffff;
+  --szoveg: #1d2421;
+  --halvany: #66706b;
+  --vonal: #dfe3e0;
+  --fo: #1f6f5c;
+  --fo-szoveg: #ffffff;
+  --racs: #e6eae7;
+  --elo: #1f6f5c;
+  --halott: #ffffff;
+  --sugar: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hatter: #141816;
+    --felulet: #1d2320;
+    --szoveg: #e6ebe8;
+    --halvany: #98a29d;
+    --vonal: #2e3632;
+    --fo: #3fa58a;
+    --fo-szoveg: #0e1412;
+    --racs: #2a332f;
+    --elo: #3fa58a;
+    --halott: #1d2320;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--hatter);
+  color: var(--szoveg);
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 0 16px 32px;
+  min-height: 100vh;
+}
+
+/* ---- Fejléc ---- */
+.fejlec { padding: 16px 0 8px; }
+.fejlec h1 { margin: 0; font-size: 1.6rem; color: var(--fo); }
+.leiras { margin: 4px 0 0; color: var(--halvany); font-size: .95rem; }
+
+/* ---- Rács ---- */
+#vaszon {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--sugar);
+  border: 1px solid var(--vonal);
+  background: var(--halott);
+  touch-action: manipulation;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* ---- Adatsor ---- */
+.adatok {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+  color: var(--halvany);
+  font-size: .95rem;
+  font-variant-numeric: tabular-nums;
+}
+.adatok b { color: var(--szoveg); }
+
+/* ---- Gombok ---- */
+.gombok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.gomb {
+  font: inherit;
+  border: 1px solid var(--vonal);
+  background: var(--felulet);
+  color: var(--szoveg);
+  border-radius: var(--sugar);
+  padding: 12px 10px;
+  cursor: pointer;
+}
+.gomb-fo { background: var(--fo); color: var(--fo-szoveg); border-color: var(--fo); font-weight: 600; }
+.gomb:active { opacity: .7; }
+
+/* ---- Sebesség ---- */
+.sebesseg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 8px;
+  color: var(--halvany);
+}
+.sebesseg input { flex: 1; accent-color: var(--fo); }
+
+.sugo { color: var(--halvany); font-size: .85rem; margin: 12px 0 0; }
+.verzio { text-align: center; color: var(--halvany); font-size: .75rem; margin-top: 24px; }
